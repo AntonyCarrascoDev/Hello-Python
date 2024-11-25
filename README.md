@@ -115,3 +115,68 @@ Funcion **type()** permitira poder identificar el tipo de dato que tenemos
 print(type(3)) -> int
 print(type('hi')) -> str
 ```
+
+## Variables
+
+Una variable es un espacio reservado en memoria a la cual se le asignara un valor.
+Python no tiene una palabra reservada para la creación de una variable, ni debemos especificar el tipo de dato que esta variable va a contener.
+
+Reglas para la creación de variables:
+
+- Un nombre de variable debe comenzar con una letra o el caracter de guión bajo.
+- Un nombre de variable no puede comenzar con un número.
+- Un nombre de variable solo puede contener caracteres alfanumericos y guiones bajos(Az,0-9 y \_)
+- Los nombres de las variables distinguen entre mayusculas y minusculas.
+- Un nombre de variable no puede ser ninguna de las palabras clave de python.
+
+```
+my_variable_entero=3
+my_variable_bool=True
+my_variable_float=3.5
+```
+
+### Casting de variable
+
+En Python podemos forzar el cambio de una tipo de una variable, siempre y cuando la información lo permita.
+
+```
+my_variable_int_to_str =str(my_variable_entero)
+print(type(my_variable_entero)) #Devuelve <class 'int'>
+print(type(my_variable_int_to_str)) #Devuelve <class 'str'>
+```
+
+### Concatenación de variables
+
+Podemos juntar variables de tipo str.
+
+```
+name_complet = first_name + ' ' + last_name
+print(name_complet)
+```
+
+### Función reservada de python len()
+
+La función reservada en el lenguaje de programación python tiene una función len(), la cual devolvera el numero de caracteres que un string tiene.
+
+```
+print(len(first_name))
+```
+
+### Asignación de variables en una sola linea
+
+```
+name, surname = 'Antony','Alarcon'
+```
+
+> Cuidado con abusar con esta sintaxis ya que puede generar problemas en el mantenimiento del aplicativo.
+
+### Ingresar el valor por teclado
+
+Con la función input() pedimos que el ingreso del valor se realice por teclado
+
+```
+nombre = input('Ingresa tu nombre: ')
+print(f"Hola {nombre}")
+```
+
+> Cuando pedimos un valor con el metodo input() siempre se va a recibir un valor en tipo str.
