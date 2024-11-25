@@ -1,6 +1,6 @@
 # Hello-Python
 
-Este rositorio llevará mi aprendizaje en python
+Este repositorio llevará mi aprendizaje en python
 
 ## Comentarios y hola mundo
 
