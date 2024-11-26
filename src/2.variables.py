@@ -38,4 +38,3 @@ print(f"Hola {nombre}")
 address:str = "La Victoria"
 address = 32
 print(address)
-

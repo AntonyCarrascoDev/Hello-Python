@@ -180,3 +180,34 @@ print(f"Hola {nombre}")
 ```
 
 > Cuando pedimos un valor con el metodo input() siempre se va a recibir un valor en tipo str.
+
+## OPERADORES
+
+Los operadores se utilizan para realizar operaciones sobre variables y valores.
+
+- Adición(+) sumar dos valores
+
+- Resta (-) restar dos valores
+
+- Multiplicación (\*) multiplicar dos valores, tambien podemos multiplicar un string con un numero y lo que realizara es repetir el str las veces que el numero lo estipule.
+
+- División (/) dividir dos valores
+
+- Módulo (%) encontrar el residuo de dividir dos valores
+
+- División exacta (//) muestra el cociente de la división, asi no sea exacta
+- Exponenciación (\*\*) eleva a un exponente un numero.
+
+![alt text](image-1.png)
+
+- Operadores de asignación -> El operador de asignación es el signo = que lo utilizamos para asignar un valor a una variable.
+
+![alt text](image.png)
+
+- Operadores comparativos -> Permite realizar comparaciones entre 2 valores, esto devolvera un valor de True o False.
+
+![alt text](image-2.png)
+
+- Operadores lógicos -> Permite realizar comparaciones logicas entre 2 o mas valores, esto devolvera un valor de True o False
+
+![alt text](image-3.png)
