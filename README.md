@@ -476,3 +476,315 @@ print(challenge.startswith('thirty')) # True
 challenge = '30 days of python'
 print(challenge.startswith('thirty')) # False
 ```
+
+## Listas
+
+Las listas se utilizan para almacenar varios elementos en una sola variable.
+Las listas son uno de los cuatro tipos de datos integrados en Python que se utilizan para almacenar colecciones de datos; los otros tre son Tuple, Set y Dictionary.
+
+```
+my_list = ["aple","banana","cherry"]
+my_other_list = [25, 1.56, "Antony"]
+```
+
+> Podemos tener diferentes de tipos de datos en una lista.
+
+### Acceder a elementos
+
+Los elementos de la lista están indexados y puedes acceder a ellos consultando el numero de indice.
+
+```
+my_list = ["apple","banana","cherry"]
+print(my_list[1]) #Imprimira el valor en el indice 1
+```
+
+Indexación negativa -> La indexación negativa significa empezar desde el final, donde -1 se refiere al ultimo elemento, -2 se refiere al penultimo elemento, etc.
+
+```
+print(my_list[-1])
+```
+
+Rango de indices -> Se puede especificar un rango de indices especificando donde comenzar y donde finalizar el rango. Esto devolvera una nueva lista con los elementos especificados.
+
+```
+print(my_list[2:5])
+```
+
+> La búsqueda comenzará en el índice 2 (incluido) y finalizará en el índice 5 (no incluido).
+
+Comprobar si el valor existe
+
+Para determinar si un elemento especifico esta presente en una lista, utilice la **in** palabra clave.
+
+```
+thislist = ["apple", "banana", "cherry"]
+if "apple" in thislist:
+  print("Yes, 'apple' is in the fruits list")
+```
+
+### Cambiar el valor del articulo
+
+Ya que una list es variable, nosotros podriamos cambiar el valor de un elemento especifico.
+
+```
+thislist = ["apple", "banana", "cherry"]
+thislist[1] = "blackcurrant"
+print(thislist)
+```
+
+Cambiar un rango de valores de elementos -> Para cambiar un rango de valores de elementos, debemos definir una lista con los nuevos valores y hacer referencia al rango de numeros de indice donde desea insertar los nuevos valores.
+
+```
+thislist = ["apple", "banana", "cherry", "orange", "kiwi", "mango"]
+thislist[1:3] = ["blackcurrant", "watermelon"]
+print(thislist)
+```
+
+> Si inserta más elementos de los que reemplaza, los nuevos elementos se insertarán donde especificó y los elementos restantes se moverán en consecuencia:
+
+```
+thislist = ["apple", "banana", "cherry"]
+thislist[1:2] = ["blackcurrant", "watermelon"]
+print(thislist)
+
+thislist = ["apple", "banana", "cherry"]
+thislist[1:3] = ["watermelon"]
+print(thislist)
+```
+
+Insertar elementos -> Para insertar un nuevo elemento de la lista, sin reemplazar ninguno de los valores existentes, podemos utilizar el **insert()** metodo.
+
+```
+thislist = ["apple", "banana", "cherry"]
+thislist.insert(2, "watermelon") # indicamos el indice y el valor
+print(thislist)
+```
+
+### Añadir elementos
+
+Para agregar un elemento al final de la lista, utilice el metodo **append()**
+
+```
+thislist = ["apple", "banana", "cherry"]
+thislist.append("orange")
+print(thislist)
+```
+
+Para insertar un elemento de lista en un indice especificado, utilice el **insert()** metodo.
+
+```
+thislist = ["apple", "banana", "cherry"]
+thislist.insert(1, "orange")
+print(thislist)
+```
+
+Ampliar una lista
+
+Para agregar elementos de otra lista a la lista actual, utilice el **extend()** metodo.
+
+```
+thislist = ["apple", "banana", "cherry"]
+tropical = ["mango", "pineapple", "papaya"]
+thislist.extend(tropical)
+print(thislist)
+```
+
+> Con el metodo **extend()** puede agregar cualquier otro objeto iterable (tuplas,conjuntos, diccionarios,etc.)
+
+```
+thislist = ["apple", "banana", "cherry"]
+thistuple = ("kiwi", "orange")
+thislist.extend(thistuple)
+print(thislist)
+```
+
+### Elimina elementos de la lista
+
+El metodo **remove()** elimina el elemento especificado
+
+```
+thislist = ["apple", "banana", "cherry"]
+thislist.remove("banana")
+print(thislist)
+```
+
+> Si hay más de un elemento con el valor especificado, el remove()método elimina la primera aparición:
+
+Eliminar indice especificado
+
+El metodo **pop()** elimina el indice especificado
+
+```
+thislist = ["apple", "banana", "cherry"]
+thislist.pop(1)
+print(thislist)
+```
+
+> Si no especifica el índice, el pop()método elimina el último elemento.
+
+La palabra **del** tambien elimina el indice especificado
+
+```
+thislist = ["apple", "banana", "cherry"]
+del thislist[0]
+print(thislist)
+```
+
+> La delpalabra clave también puede eliminar la lista por completo.
+
+```
+thislist = ["apple", "banana", "cherry"]
+del thislist
+print(thislist) #this will cause an error because you have succsesfully deleted "thislist".
+```
+
+Limpiar la lista
+
+El metodo **clear()** vacia la lista
+
+```
+thislist = ["apple", "banana", "cherry"]
+thislist.clear()
+print(thislist) #vacia
+```
+
+### Recorrer una lista en bucle
+
+Se puede recorrer los elementos de la lista mediante un **for** bucle
+
+```
+thislist = ["apple", "banana", "cherry"]
+for x in thislist:
+  print(x)
+```
+
+Tambien podemos hacerlo consultando el numero de indice.
+
+```
+thislist = ["apple", "banana", "cherry"]
+for i in range(len(thislist)):
+  print(thislist[i])
+```
+
+Mediante comprensión de listas
+
+```
+thislist = ["apple", "banana", "cherry"]
+[print(x) for x in thislist]
+```
+
+### Comprensión de listas - List comprehension
+
+La List Comprehension ofrece una sintaxis más corta cuando desea crear una nueva lista basada en los valores de una lista existente.
+
+Ejemplo: A partir de una lista de frutas, desea una nueva lista que contenga solo las frutas con la letra "a" en el nombre
+
+```
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+newlist = []
+
+for x in fruits:
+  if "a" in x:
+    newlist.append(x)
+
+print(newlist)
+```
+
+Mediante compresión seria
+
+```
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+
+newlist = [x for x in fruits if "a" in x]
+
+print(newlist)
+```
+
+Sintaxis
+
+```
+newlist = [expression for item in iterable if condition == True]
+```
+
+Condicion
+
+La condición es como un filtro que sólo acepta los artículos que valen **True**.
+
+```
+newlist = [x for x in fruits if x != "apple"]
+```
+
+> La condición if x != "apple" regresará Truepara todos los elementos excepto "manzana", lo que hará que la nueva lista contenga todas las frutas excepto "manzana".
+
+Expresión
+
+La expresión es el elemento actual en la iteración, pero también es el resultado, que puedes manipular antes de que termine como un elemento de lista en la nueva lista:
+
+```
+newlist = [x.upper() for x in fruits]
+```
+
+### Ordenas lista
+
+Alfanumerica
+
+Los objetos de lista tienen un **sort()** metodo que ordenara la lista alfanumericamente, en orden ascendete, de forma predeterminada.
+
+```
+thislist = ["orange", "mango", "kiwi", "pineapple", "banana"]
+thislist.sort()
+print(thislist)
+
+thislist = [100, 50, 65, 82, 23]
+thislist.sort()
+print(thislist)
+```
+
+Ordernar de forma descendente
+
+```
+thislist = ["orange", "mango", "kiwi", "pineapple", "banana"]
+thislist.sort(reverse = True)
+print(thislist)
+```
+
+Personalizar la función de clasficación
+
+Tambien puedes personalizar tu propia función utilizando la palabra clave argumento **key = function**
+
+```
+def myfunc(n):
+  return abs(n - 50)
+
+thislist = [100, 50, 65, 82, 23]
+thislist.sort(key = myfunc)
+print(thislist)
+```
+
+> De forma predeterminada, el sort()método distingue entre mayúsculas y minúsculas, lo que da como resultado que todas las letras mayúsculas se ordenen antes que las minúsculas:
+
+> Afortunadamente, podemos utilizar funciones integradas como funciones clave al ordenar una lista.
+
+> Entonces, si desea una función de ordenamiento que no distinga entre mayúsculas y minúsculas, utilice str.lower como función clave:
+
+```
+thislist = ["banana", "Orange", "Kiwi", "cherry"]
+thislist.sort(key = str.lower)
+print(thislist)
+```
+
+Orden inverso
+
+¿Qué pasa si quieres invertir el orden de una lista, independientemente del alfabeto?
+
+El **reverse()** método invierte el orden de clasificación actual de los elementos.
+
+```
+thislist = ["banana", "Orange", "Kiwi", "cherry"]
+thislist.reverse()
+print(thislist)
+```
+
+### Metodos de lista
+
+![alt text](image-4.png)
